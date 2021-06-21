@@ -4,13 +4,17 @@ process.stdout.write('prompt > ');
 const exportsFromPwd = require('./pwd')
 exportsFromPwd()
 
-// const fs = require('fs').readdir;
+// ls
 const exportsFromLs = require('./ls')
 exportsFromLs()
 
 // cat
 const exportsFromCat = require('./cat');
 exportsFromCat();
+
+// curl
+const exportFromCurl = require('./curl');
+exportFromCurl();
 
 process.stdin.on('data', (data) => {
   const cmd = data.toString().trim();
