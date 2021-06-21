@@ -1,15 +1,16 @@
 process.stdout.write('prompt > ');
-process.stdin.on('data', (data) => {
-  let input = data.toString().trim();
 
-if (input === 'pwd') {
-  const exportsFromPwd = require('./pwd')
-  exportsFromPwd()
-}
+// pwd
+const exportsFromPwd = require('./pwd')
+exportsFromPwd()
 
 // const fs = require('fs').readdir;
 const exportsFromLs = require('./ls')
 exportsFromLs()
+
+// cat
+const exportsFromCat = require('./cat');
+exportsFromCat();
 
 process.stdin.on('data', (data) => {
   const cmd = data.toString().trim();
